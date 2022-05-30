@@ -1,0 +1,81 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h5 class="app__greetings">{{greet}},</h5>
+  <h3>Kaurbanics</h3>
+
+  <div class="card">
+    <img src="../../assets/urbanicsworker.png" alt="" />
+    <div class="card__content">
+      <h1>URBANICS</h1>
+      <p>
+        Et molestiae minus ut dolores <br />
+        dolore nam culpa nulla sed <br />
+        molestiae sunt qui enim <br />
+        omnis!
+      </p>
+    </div>
+  </div>
+
+  <ion-list *ngFor="let item of dataApi">
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-card style="background-color: #fdbd8534" class="ion-no-margin">
+          <ion-card-header class="ion-no-padding">
+            <ion-card-subtitle>TEMPERATURE</ion-card-subtitle>
+            <ion-card-title class="ion-no-margin"
+              >{{item.field3}} &#176;</ion-card-title
+            >
+          </ion-card-header>
+          <ion-card-content class="ion-no-padding">
+            Keep close to Nature's heart...
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col class="ion-no-padding">
+        <ion-card style="background-color: #73ccda3b" class="ion-no-margin">
+          <ion-card-header class="ion-no-padding">
+            <ion-card-subtitle>HUMIDITY</ion-card-subtitle>
+            <ion-card-title class="ion-no-margin"
+              >{{item.field4}}</ion-card-title
+            >
+          </ion-card-header>
+          <ion-card-content class="ion-no-padding">
+            Keep close to Nature's heart...
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-card class="ion-no-margin">
+      <ion-card-header class="ion-no-padding">
+        <ion-card-subtitle>PH LEVEL</ion-card-subtitle>
+        <ion-card-title class="ion-no-margin">{{item.field1}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="ion-no-padding"> {{phLabel}} </ion-card-content>
+    </ion-card>
+
+    <ion-card class="ion-no-margin">
+      <ion-card-header class="ion-no-padding">
+        <ion-card-subtitle>TDS LEVEL</ion-card-subtitle>
+        <ion-card-title class="ion-no-margin">{{item.field2}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="ion-no-padding">
+        Keep close to Nature's heart... and break clear away, once in awhile
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
